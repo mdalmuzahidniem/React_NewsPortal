@@ -12,9 +12,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <BrowserRouter>
-        <TopNav/>
+        {
+          window.location.pathname.includes("/404")? null:<TopNav/>
+        }
         <Routes />
-        <Footer/>
+        {
+          window.location.pathname.includes("/404")? null:<Footer/>
+        }
       </BrowserRouter>
     </React.StrictMode>
 );
