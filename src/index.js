@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import './index.css';
@@ -9,19 +9,23 @@ import Footer from './component/Layout/Footer';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 root.render(
+  
   <React.StrictMode>
       <BrowserRouter>
         {
-          window.location.pathname.includes("/404")? null:<TopNav/>
+          window.location.pathname=="/404"? null:<TopNav/>
         }
         <Routes />
         {
-          window.location.pathname.includes("/404")? null:<Footer/>
+          window.location.pathname=="/404"? null:<Footer/>
         }
       </BrowserRouter>
     </React.StrictMode>
 );
+      
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

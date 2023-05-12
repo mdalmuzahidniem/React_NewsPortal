@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, Nav,NavDropdown,Container, Row,Col } from 'react-bootstrap';
+import { Link,useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 
 export default function TopNav(){
+  
+  const [path, setPath]=useState("");
+  const location = useLocation();
+
+  useEffect(()=>{
+
+    if(window.location.pathname === "/home"){
+      setPath("home");
+    }
+    if(window.location.pathname === "/magazine"){
+      setPath("magazine");
+    }
+    if(window.location.pathname === "/business"){
+      setPath("business");
+    }
+    if(window.location.pathname === "/sports"){
+      setPath("sports");
+    }
+    if(window.location.pathname === "/art"){
+      setPath("art");
+    }
+    if(window.location.pathname === "/politics"){
+      setPath("politics");
+    }
+    if(window.location.pathname === "/travel"){
+      setPath("travel");
+    }
+    if(window.location.pathname === "/contact"){
+      setPath("contact");
+    }
+  
+  },[location])
 
     return(
 
@@ -13,7 +46,7 @@ export default function TopNav(){
             <div className="d-flex justify-content-between align-items-center">
               <ul className="navbar-top-left-menu">
                 <li className="nav-item">
-                  <a href="/" className="nav-link">Advertise</a>
+                  <Link to="/" className="nav-link">Advertise</Link>
                 </li>
                 <li className="nav-item">
                   <a href="/" className="nav-link">About</a>
@@ -74,39 +107,75 @@ export default function TopNav(){
                     </li>
                     <li className="nav-item">
                       {
-                        window.location.pathname === "/home"?
-                        <a className="nav-link" href="/home" style={{textDecoration: "underline",
+                        path == "home"?
+                        <Link className="nav-link" to="/home" style={{textDecoration: "underline",
                         textDecorationColor: "red",
-                        textDecorationThickness: "4px"}}>Home</a>:
-                        <a className="nav-link" href="/home">Home</a>
+                        textDecorationThickness: "4px"}}>Home</Link>:
+                        <Link className="nav-link" to="/home">Home</Link>
                       }
                     </li>
                     <li className="nav-item">
                       {
-                        window.location.pathname === "/magazine"?
-                        <a className="nav-link" href="/magazine" style={{textDecoration: "underline",
+                        path == "magazine"?
+                        <Link className="nav-link" to="/magazine" style={{textDecoration: "underline",
                         textDecorationColor: "red",
-                        textDecorationThickness: "4px"}}>Magazine</a>:
-                        <a className="nav-link" href="/magazine">Magazine</a>
+                        textDecorationThickness: "4px"}}>Magazine</Link>:
+                        <Link className="nav-link" to="/magazine">Magazine</Link> 
                       }
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Business</a>
+                      {
+                        path == "business" ? 
+                        <Link className="nav-link" to="/business" style={{textDecoration: "underline",
+                        textDecorationColor: "red",
+                        textDecorationThickness: "4px"}}>Business</Link>:
+                        <Link className="nav-link" to="/business">Business</Link>
+                      }
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Sports</a>
+                      {
+                        path == "sports" ? 
+                        <Link className="nav-link" to="/sports" style={{textDecoration: "underline",
+                        textDecorationColor: "red",
+                        textDecorationThickness: "4px"}}>Sports</Link>:
+                        <Link className="nav-link" to="/sports">Sports</Link>
+                      }
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Art</a>
+                      {
+                        path == "art" ? 
+                        <Link className="nav-link" to="/art" style={{textDecoration: "underline",
+                        textDecorationColor: "red",
+                        textDecorationThickness: "4px"}}>Art</Link>:
+                        <Link className="nav-link" to="/art">Art</Link>
+                      }
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">POLITICS</a>
+                      {
+                        path == "politics" ? 
+                        <Link className="nav-link" to="/politics" style={{textDecoration: "underline",
+                        textDecorationColor: "red",
+                        textDecorationThickness: "4px"}}>Politics</Link>:
+                        <Link className="nav-link" to="/politics">Politics</Link>
+                      }
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Travel</a>
+                      {
+                        path == "travel" ? 
+                        <Link className="nav-link" to="/travel" style={{textDecoration: "underline",
+                        textDecorationColor: "red",
+                        textDecorationThickness: "4px"}}>Travel</Link>:
+                        <Link className="nav-link" to="/travel">Travel</Link>
+                      }
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Contact</a>
+                      {
+                        path == "contact" ? 
+                        <Link className="nav-link" to="/contact" style={{textDecoration: "underline",
+                        textDecorationColor: "red",
+                        textDecorationThickness: "4px"}}>Contact</Link>:
+                        <Link className="nav-link" to="/contact">Contact</Link>
+                      }
                     </li>
                   </ul>
                 </div>

@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    
   }
   .error-title {
     font-size: 4rem;

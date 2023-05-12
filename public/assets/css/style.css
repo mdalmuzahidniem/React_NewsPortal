@@ -4559,14 +4559,16 @@ input[type="button"].btn-block {
 
 .card-deck .card {
   margin-bottom: 15px;
+  min-width: 183px;
 }
 
 @media (min-width: 576px) {
   .card-deck {
     display: flex;
     flex-flow: row wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 0px;
+    margin-left: 0px;
+    min-width: 200px;
   }
   .card-deck .card {
     flex: 1 0 0%;
@@ -9678,7 +9680,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .card .card-body {
-  padding: 2rem 2rem;
+  padding: 1rem 1rem;
+  margin-block: .5rem;
 }
 
 .card.card-hover {
@@ -9686,8 +9689,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .card.card-hover:hover {
+  cursor: pointer;
   box-shadow: 0 1rem 2.5rem rgba(22, 28, 45, 0.1), 0 0.5rem 1rem -0.75rem rgba(22, 28, 45, 0.1);
-  transform: translate3d(0, -3px, 0);
+  transform: translate3d(0, -8px, 0);
 }
 
 .card .card-title {
